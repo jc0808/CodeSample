@@ -79,9 +79,12 @@ export default function AdoptPage({ currentUser, handlePetsOwned, shelters, setS
 
                 return shelter
             })
-
+            
+            //This will update state
             setShelters(updateShelters)
-
+            
+            //This will send a request to the backend to update the pet that is being adopted.
+            //To change the adopted? to true and to assign an owner id to the pet.
             fetch(`/pets/${id}`, {
                 method: "PATCH",
                 headers: {
